@@ -8,7 +8,7 @@ $('#chart1').highcharts({
             text: 'Most searched Employee Benefits'
         },
         xAxis: {
-            categories: ['Maternity Leave', 'Health Insurance','Onsite Day care', 'Telecommuting', 'Paternity Leave']
+            categories: ['Health Insurance','Maternity Leave', 'Onsite Day care', 'Telecommuting', 'Paternity Leave']
         },
         yAxis: {
             min: 0,
@@ -19,14 +19,10 @@ $('#chart1').highcharts({
         legend: {
             reversed: true
         },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
+
         series: [{
             name: 'All searches',
-            data: [90, 78, 60, 47, 32]
+            data: [300, 90, 60, 47, 32]
         }, ]
     });
 
@@ -39,7 +35,7 @@ $('#chart2').highcharts({
             text: 'Most searched Employee Benefits - breakdown by Gender'
         },
         xAxis: {
-            categories: ['Maternity Leave', 'Health Insurance','Onsite Day care', 'Telecommuting', 'Paternity Leave']
+            categories: ['Health Insurance','Maternity Leave','Onsite Day care', 'Telecommuting', 'Paternity Leave']
         },
         yAxis: {
             min: 0,
@@ -50,19 +46,14 @@ $('#chart2').highcharts({
         legend: {
             reversed: true
         },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
         
         series: [{
-            name: 'Men',
-            data: [25, 33, 15, 14, 12]
-        }, {
             name: 'Women',
-            data: [62, 42, 14, 4, 11]
-        }]
+            data: [162, 80, 70, 30, 15]
+        },{
+            name: 'Men',
+            data: [148, 10, 10, 10, 8]
+        }, ]
     });
 
 $('#chart3').highcharts({
@@ -73,7 +64,7 @@ $('#chart3').highcharts({
             text: 'Most searched Employee Benefits - breakdown by Age group'
         },
         xAxis: {
-            categories: ['Maternity Leave', 'Health Insurance','Onsite Day care', 'Telecommuting', 'Paternity Leave']
+            categories: ['Health Insurance', 'Maternity Leave', 'Onsite Day care', 'Telecommuting', 'Paternity Leave']
         },
         yAxis: {
             min: 0,
@@ -84,27 +75,22 @@ $('#chart3').highcharts({
         legend: {
             reversed: true
         },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
 
         series: [{
             name: '20-29',
-            data: [5, 3, 4, 7, 2]
+            data: [50, 30, 20, 4, 2]
         }, {
             name: '31-40',
-            data: [2, 2, 3, 2, 1]
+            data: [80, 45, 20, 3, 1]
         }, {
             name: '41-50',
-            data: [3, 4, 4, 2, 5]
+            data: [90, 13, 30, 4, 5]
         }, {
             name: '51-60',
-            data: [3, 4, 4, 2, 5]
+            data: [100, 2, 30, 4, 5]
         }, {
             name: '61 and above',
-            data: [3, 4, 4, 2, 5]
+            data: [10, 0, 4, 2, 10]
         },
         ]
     });
