@@ -83,6 +83,8 @@ function createCompany(req, res) {
 		}, function(err, company) {
 			if (err)
 				res.send(err);
+
+			res.send(company);
 		});
 	});
 
