@@ -9,6 +9,14 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 
 	}
 
+	$scope.saveFilter = function(id) {
+		console.log("ID is"+id);
+		Benefits.saveIds(id)
+			.success(function(data) {
+				console.log("SUCCESS"+data);
+			});
+	};
+
 	Benefits.getFullBenefits()
           .success(function(data) {
             console.log(data);

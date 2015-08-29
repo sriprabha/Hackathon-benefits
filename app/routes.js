@@ -1,4 +1,5 @@
-var Benefits = require('./models/Company');
+var Benefits = require('./models/Benefits');
+var ids = [];
 
 function getBenefits(res){
 	Benefits.find(function(err, benefits) {
@@ -42,6 +43,9 @@ function getFullBenefits(res){
 	});
 };
 
+function saveIds(idList) {
+	ids.push(idList);
+}
 module.exports = function(app) {
 
 	// server routes ===========================================================
@@ -56,6 +60,10 @@ module.exports = function(app) {
 	app.get('/api/fullbenefits', function(req, res) {
 
 		getFullBenefits(res);
+	});
+
+	app.get('/api/save/{{id}}', function(req,res) {
+		saveIds(id);
 	});
 
 
