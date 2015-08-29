@@ -21,6 +21,26 @@ function getBenefits(res){
 	});
 };
 
+function getFullBenefits(res){
+	Benefits.find(function(err, benefits) {
+		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		if (err)
+			res.send(err);
+
+		var fullBenefits =[];
+		var keys = {};
+		for (var benefit in benefits) {
+			if(benefits[benefit].id in keys) {
+				// something
+			} else {
+				fullBenefits[benefit] = ({id: benefits[benefit].id, text: benefits[benefit].text});
+				keys[benefits[benefit].id] = benefits[benefit].text;
+			}
+		};
+
+		res.json(fullBenefits); // return all todos in JSON format
+	});
+};
 
 module.exports = function(app) {
 
@@ -31,6 +51,11 @@ module.exports = function(app) {
 
 		// use mongoose to get all benefits in the database
 		getBenefits(res);
+	});
+
+	app.get('/api/fullbenefits', function(req, res) {
+
+		getFullBenefits(res);
 	});
 
 

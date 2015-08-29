@@ -4,6 +4,9 @@ angular.module('BenefitsService', [])
     return {
       get : function() {
         return $http.get('/api/benefits');
+      },
+      getFullBenefits : function() {
+        return $http.get('/api/fullbenefits');
       }
     }
   }]);
