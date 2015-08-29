@@ -23,6 +23,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'CompanyController'
 		})
 
+		.when('/loggedin', {
+			templateUrl: 'views/company.html',
+			controller: 'CompanyController'
+		})
+
 		.when('/applicantLogin', {
 			templateUrl: 'views/technology.html',
 			controller: 'TechnologyController'
