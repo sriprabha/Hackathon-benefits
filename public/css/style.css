@@ -1,11 +1,30 @@
 
 body{ 
-	opacity: 0.85;
+	opacity: 0.9;
 	background-image: url('bg.jpg');
 	padding:20px;
+    font-family: "Brandon Grotesque Bold", sans-serif !important;
+    font-family: 'Brandon Grotesque Bold', sans-serif;
+font-kerning: auto;
+font-size: 20px;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-variant-ligatures: normal;
+font-weight: normal;
 
 }
 
+.details {
+    font-size:17px !important;
+}
+
+#community .details {
+    padding:20px !important;
+}
+.submit {
+    opacity:0.9 !important;
+}
 .navbar-margin {
     margin-top:33px;
 }
@@ -116,6 +135,6 @@ ul li {
 }
 
 .charts > div {
-    flex: 1 1 28%;
+    flex: 1 1 46%;
     margin: 10px 10px;
 }
