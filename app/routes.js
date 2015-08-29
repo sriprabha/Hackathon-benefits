@@ -64,23 +64,28 @@ function getCompanies(req, res) {
 }
 
 function createCompany(req, res) {
-	req.body.url = 'http://www.UberCats.com';
-	req.body.name = 'UberCats';
-	req.body.benefits = [1,2,3];
 
-	var currentCount = Company.count();
+	var ids =[];
+	for (var benefit in req.body.benefits) {
+		ids[benefit] = req.body.benefits[benefit].id;
+	};
 
-	Company.create({
-		"id" : currentCount+1,
-		"name" : req.body.name,
-		"benefits" : req.body.benefits,
-		"url": req.body.url
-	}, function(err, company) {
-		if (err)
-			res.send(err);
+	var currentCount = 0;
+	Company.count().exec(function(err, c)
+	{
+		currentCount = parseInt(c+1,10);
 
-		console.log(company);
+		Company.create({
+			"id" : currentCount,
+			"name" : req.body.name,
+			"benefits" : ids,
+			"url": req.body.url
+		}, function(err, company) {
+			if (err)
+				res.send(err);
+		});
 	});
+
 }
 
 function saveIds(idList) {
