@@ -14,7 +14,7 @@ function getBenefits(res){
 			if(benefits[benefit].id in keys) {
 				// something
 			} else {
-				texts[benefit] = ({text: benefits[benefit].text});
+				texts[benefit] = ({text: benefits[benefit].text, id: benefits[benefit].id});
 				keys[benefits[benefit].id] = benefits[benefit].text;
 			}
 		};
