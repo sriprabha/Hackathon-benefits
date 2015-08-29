@@ -53,8 +53,14 @@ ul li {
 .tile-container{
 	margin:7px;
 }
+
+.noMsg {
+    color:#fff;
+}
 .panel-header {
     font-weight:bold;
+    padding:1px !important;
+    text-align: center !important;
 }
 .active {
     opacity:0.7;

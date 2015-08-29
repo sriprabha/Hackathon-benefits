@@ -4,18 +4,16 @@
 		ng-class="{active: isSelected($index)}" class="tile btn btn-default">{{row.text}}</button>
 	</div>
 	<button type="submit" class="btn btn-primary" ng-class="{disabled: !selected}" ng-click="reset()">Reset</button>
+
+	<h2 ng-show="showMessage" class="noMsg"> Select Filters </h2>
 </div>
 
 <div class="container">
-	
+
 	<div class="list-group results-container" ng-repeat="item in companies">
-	  <button type="button" class="list-group-item panel-header" ng-click="clicked = !clicked">{{item}}</button>
-	<div class="panel panel-default">
-	  <div class="panel-body" ng-show="clicked">
-	      Summary
-	      Job page
-	  </div>
-	 </div>
+	  <a href="{{item.url}}" title = "{{item.url}}" class="list-group-item">
+	    <h4 class="list-group-item-heading">{{item.name}}</h4>
+	    <p class="list-group-item-text">Company Size: {{item.size}} Gender ratio : {{item.gender_ratio}}</p>
+	  </a>
 	</div>
-</div>
 </div>
