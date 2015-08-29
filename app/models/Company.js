@@ -7,7 +7,8 @@ var company = dbmongo.model('Company', {
   id: {type: Number},
   name: {type: String},
   size: {type: Number},
-  gender_ratio: {type: Number},
+  industry: {type: String},
+  hq: {type: String},
   url: {type: String},
   benefits: [Number]
 });

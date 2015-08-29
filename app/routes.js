@@ -63,6 +63,11 @@ function getCompanies(req, res) {
 		});
 }
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
 function createCompany(req, res) {
 
 	var ids =[];
@@ -79,6 +84,7 @@ function createCompany(req, res) {
 			"id" : currentCount,
 			"name" : req.body.name,
 			"benefits" : ids,
+			"size": getRandomInt(100, 10000),
 			"url": req.body.url
 		}, function(err, company) {
 			if (err)

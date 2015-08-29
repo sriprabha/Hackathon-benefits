@@ -1,12 +1,12 @@
 
 body{ 
-	opacity: 0.85;
+	opacity: 0.9;
 	background-image: url('bg.jpg');
 	padding:20px;
     font-family: "Brandon Grotesque Bold", sans-serif !important;
     font-family: 'Brandon Grotesque Bold', sans-serif;
 font-kerning: auto;
-font-size: 16px;
+font-size: 20px;
 font-stretch: normal;
 font-style: normal;
 font-variant: normal;
