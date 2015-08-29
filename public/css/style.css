@@ -15,6 +15,16 @@ font-weight: normal;
 
 }
 
+.details {
+    font-size:17px !important;
+}
+
+#community .details {
+    padding:20px !important;
+}
+.submit {
+    opacity:0.9 !important;
+}
 .navbar-margin {
     margin-top:33px;
 }
