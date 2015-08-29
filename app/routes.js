@@ -1,4 +1,5 @@
 var Benefits = require('./models/Benefits');
+var Company = require('./models/Company');
 var ids = [];
 
 function getBenefits(res){
@@ -43,6 +44,25 @@ function getFullBenefits(res){
 	});
 };
 
+function getCompanies(req, res) {
+	// Get all the ids in the array first
+	var ids = [];
+	req.body.benefits=[{id:1},{id:8}];
+	var benefits = req.body.benefits;
+	for (var benefit in benefits) {
+		ids[benefit] = benefits[benefit].id;
+	};
+
+	Company.find( { benefits: { $all: ids } } )
+		.exec(function(err, companies) {
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err);
+
+			res.json(companies);
+		});
+}
+
 function saveIds(idList) {
 	ids.push(idList);
 }
@@ -62,12 +82,13 @@ module.exports = function(app) {
 		getFullBenefits(res);
 	});
 
-	app.get('/api/save/{{id}}', function(req,res) {
-		saveIds(id);
+	app.post('/api/save', function(req, res) {
+		getCompanies(req, res);
 	});
 
 
-	// frontend routes =========================================================
+
+		// frontend routes =========================================================
 	// route to handle all angular requests
 	app.get('*', function(req, res) {
 		res.sendfile('./public/index.html');
