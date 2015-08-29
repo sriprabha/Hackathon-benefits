@@ -9,14 +9,10 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 
 	}
 
-	Benefits.get()
+	Benefits.getFullBenefits()
           .success(function(data) {
             console.log(data);
-            var output = [];
-            for(val in data) {
-            	output.push(data.text);
-            }
-            $scope.benefits = output;
+            $scope.benefits = data;
             
           });
 });

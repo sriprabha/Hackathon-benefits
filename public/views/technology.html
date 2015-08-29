@@ -1,8 +1,7 @@
 <div class="text-center">
-	<div class="btn-group tile-container" role="group" ng-repeat = "text in benefits" aria-label="...">
-		<button type="button" class="tile btn btn-default">{{text}}</button>
+	<div class="btn-group tile-container" role="group" ng-repeat = "row in benefits" aria-label="...">
+		<button type="button" class="tile btn btn-default">{{row.text}}</button>
 	</div>
-	<button type="button" class="btn btn-primary" ng-click="reset()">Reset</button>
 </div>
 
 <div class="container">
