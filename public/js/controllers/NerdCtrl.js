@@ -1,4 +1,17 @@
-angular.module('NerdCtrl', []).controller('NerdController', function($scope) {
+angular.module('NerdCtrl', []).controller('NerdController', function($scope, $http, Benefits) {
+
+  Benefits.getFullBenefits()
+    .success(function(data) {
+
+      $scope.benefitimpressions = [];
+      $scope.benefittexts = [];
+
+      for(var benefit in data) {
+        $scope.benefitimpressions[benefit] = data[benefit].impression;
+        $scope.benefittexts[benefit] = data[benefit].text;
+      }
+    });
+
 
 $('#chart1').highcharts({
         chart: {
@@ -8,7 +21,7 @@ $('#chart1').highcharts({
             text: 'Most searched Employee Benefits'
         },
         xAxis: {
-            categories: ['Health Insurance','Maternity Leave', 'Onsite Day care', 'Telecommuting', 'Paternity Leave']
+            categories: $scope.benefittexts
         },
         yAxis: {
             min: 0,
@@ -22,8 +35,8 @@ $('#chart1').highcharts({
 
         series: [{
             name: 'All searches',
-            data: [300, 90, 60, 47, 32]
-        }, ]
+            data: $scope.benefitimpressions
+        }]
     });
 
 

@@ -35,6 +35,12 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 			filters.splice(fil,1);
 		}
 		else {
+			// Update the impressions
+			Benefits.recordImp(row)
+				.success(function(data) {
+					console.log('Updated');
+				});
+
 			$scope.showMessage = false;
 			filters.push(row);
 			indices.push(index);

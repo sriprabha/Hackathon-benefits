@@ -10,6 +10,9 @@ angular.module('BenefitsService', [])
       },
       saveIds: function(ids) {
         return $http.post('/api/save', ids);
+      },
+      recordImp : function(benefit_id) {
+        return $http.post('/api/benefit/recordimp/' + benefit_id);
       }
     }
   }]);
