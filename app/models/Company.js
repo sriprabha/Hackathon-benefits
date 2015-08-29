@@ -13,7 +13,7 @@ var company = dbmongo.model('Company', {
 });
 
 
-
+/*
 company.create(
   {id: 1, name: 'Google book', size: 20000, gender_ratio: 25, url: 'https://www.linkedin.com/company/google', benefits: [1,2,4,5]},
   {id: 2, name: 'LinkedOut', size: 2000, gender_ratio: 2, url: 'http://www.linkedin.com', benefits: [1,8,5]},
@@ -21,5 +21,5 @@ company.create(
     if (err) return handleError(err);
     // saved!
   });
-
+*/
 module.exports = company;

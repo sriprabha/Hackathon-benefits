@@ -8,10 +8,11 @@ var dbmongo = mongoose.createConnection(db.url);
 // Static data for Benefits
 var benefits = dbmongo.model('benefits', {
 	id: {type: Number, default: 0},
-	text: {type: String, default: 'Blah'}
+	text: {type: String, default: 'Blah'},
+  impression: {type: Number, default: 10}
 });
 
-
+/*
 
 benefits.create(
   {id: 1, text: '401k match'},
@@ -28,7 +29,7 @@ benefits.create(
   {id: 12, text: "Part time"}, function (err, small) {
    if (err) return handleError(err);
    // saved!
-  });
+  });*/
 
 module.exports = benefits;
 

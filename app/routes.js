@@ -38,7 +38,7 @@ function getFullBenefits(res){
 			if(benefits[benefit].id in keys) {
 				// something
 			} else {
-				fullBenefits[benefit] = ({id: benefits[benefit].id, text: benefits[benefit].text});
+				fullBenefits[benefit] = ({id: benefits[benefit].id, text: benefits[benefit].text, impression: benefits[benefit].impression});
 				keys[benefits[benefit].id] = benefits[benefit].text;
 			}
 		};
@@ -120,6 +120,22 @@ module.exports = function(app) {
 		createCompany(req, res);
 	});
 
+
+	app.post('/api/benefit/recordimp/:benefit_id', function(req, res) {
+		Benefits.find({id: req.params.benefit_id})
+			.exec(function(err, benefit) {
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err);
+
+			benefit[0].impression	= parseInt(benefit[0].impression+1,10);
+			Benefits.update({id: req.params.benefit_id},benefit[0], function(err,affected) {
+				console.log('affected rows %d', affected);
+			});
+
+			res.json(benefit); // return all todos in JSON format
+		});
+	});
 
 		// frontend routes =========================================================
 	// route to handle all angular requests
