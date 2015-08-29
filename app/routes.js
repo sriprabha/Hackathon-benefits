@@ -1,6 +1,10 @@
 var Benefits = require('./models/Benefits');
+var Company = require('./models/Company');
 var ids = [];
 
+/**
+ * Benefit APIS
+ */
 function getBenefits(res){
 	Benefits.find(function(err, benefits) {
 		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -13,7 +17,7 @@ function getBenefits(res){
 			if(benefits[benefit].id in keys) {
 				// something
 			} else {
-				texts[benefit] = ({text: benefits[benefit].text});
+				texts[benefit] = ({text: benefits[benefit].text, id: benefits[benefit].id});
 				keys[benefits[benefit].id] = benefits[benefit].text;
 			}
 		};
@@ -43,6 +47,42 @@ function getFullBenefits(res){
 	});
 };
 
+/**
+ * Company APIS
+ */
+function getCompanies(req, res) {
+	// Get all the ids in the array first
+	Company.find( { benefits: { $all: req.body } } )
+		.exec(function(err, companies) {
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err);
+
+			console.log(companies);
+			res.json(companies);
+		});
+}
+
+function createCompany(req, res) {
+	req.body.url = 'http://www.UberCats.com';
+	req.body.name = 'UberCats';
+	req.body.benefits = [1,2,3];
+
+	var currentCount = Company.count();
+
+	Company.create({
+		"id" : currentCount+1,
+		"name" : req.body.name,
+		"benefits" : req.body.benefits,
+		"url": req.body.url
+	}, function(err, company) {
+		if (err)
+			res.send(err);
+
+		console.log(company);
+	});
+}
+
 function saveIds(idList) {
 	ids.push(idList);
 }
@@ -62,12 +102,19 @@ module.exports = function(app) {
 		getFullBenefits(res);
 	});
 
-	app.get('/api/save/{{id}}', function(req,res) {
-		saveIds(id);
+	app.post('/api/save', function(req, res) {
+		getCompanies(req, res);
 	});
 
 
-	// frontend routes =========================================================
+// create todo and send back all todos after creation
+	app.post('/api/company', function(req, res) {
+
+		createCompany(req, res);
+	});
+
+
+		// frontend routes =========================================================
 	// route to handle all angular requests
 	app.get('*', function(req, res) {
 		res.sendfile('./public/index.html');

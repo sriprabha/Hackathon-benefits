@@ -1,10 +1,10 @@
 <div class="jumbotron text-center">
 	<div class="input-group form-input">
 		<span class="input-group-addon" id="basic-addon1">https://www.linkedin.com/company/</span>
-		<input type="text" class="form-control" placeholder="LinkedIn Name" aria-describedby="basic-addon1"/>
+		<input type="text" class="form-control" placeholder="LinkedIn Name" aria-describedby="basic-addon1" ng-required="true"/>
 	</div>
 	
-	 <tags-input ng-model="tags" class="form-input">
+	 <tags-input ng-model="tags" class="form-input" required>
         <auto-complete source="loadTags($query)"></auto-complete>
     </tags-input>
     

@@ -9,7 +9,7 @@ angular.module('BenefitsService', [])
         return $http.get('/api/fullbenefits');
       },
       saveIds: function(ids) {
-        return $http.post('/api/save/{{ids}}');
+        return $http.post('/api/save', ids);
       }
     }
   }]);

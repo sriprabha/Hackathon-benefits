@@ -28,10 +28,8 @@ benefits.create(
   {id: 12, text: "Part time"}, function (err, small) {
    if (err) return handleError(err);
    // saved!
-  });*/
-
-//console.log(company);
-
+  });
+*/
 module.exports = benefits;
 
 
