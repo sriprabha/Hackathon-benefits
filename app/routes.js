@@ -2,6 +2,9 @@ var Benefits = require('./models/Benefits');
 var Company = require('./models/Company');
 var ids = [];
 
+/**
+ * Benefit APIS
+ */
 function getBenefits(res){
 	Benefits.find(function(err, benefits) {
 		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -44,6 +47,9 @@ function getFullBenefits(res){
 	});
 };
 
+/**
+ * Company APIS
+ */
 function getCompanies(req, res) {
 	// Get all the ids in the array first
 	Company.find( { benefits: { $all: req.body } } )
@@ -55,6 +61,26 @@ function getCompanies(req, res) {
 			console.log(companies);
 			res.json(companies);
 		});
+}
+
+function createCompany(req, res) {
+	req.body.url = 'http://www.UberCats.com';
+	req.body.name = 'UberCats';
+	req.body.benefits = [1,2,3];
+
+	var currentCount = Company.count();
+
+	Company.create({
+		"id" : currentCount+1,
+		"name" : req.body.name,
+		"benefits" : req.body.benefits,
+		"url": req.body.url
+	}, function(err, company) {
+		if (err)
+			res.send(err);
+
+		console.log(company);
+	});
 }
 
 function saveIds(idList) {
@@ -80,6 +106,12 @@ module.exports = function(app) {
 		getCompanies(req, res);
 	});
 
+
+// create todo and send back all todos after creation
+	app.post('/api/company', function(req, res) {
+
+		createCompany(req, res);
+	});
 
 
 		// frontend routes =========================================================
