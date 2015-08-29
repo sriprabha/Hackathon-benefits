@@ -11,7 +11,9 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 		$location.path( "/"+item );
 	}
 	$scope.reset = function() {
-
+		indices = [];
+		filters = [];
+		$scope.selected = false;
 	}
 
 	$scope.isSelected = function(index) {
