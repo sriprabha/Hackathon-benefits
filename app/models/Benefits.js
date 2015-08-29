@@ -9,28 +9,27 @@ var benefits = dbmongo.model('benefits', {
 	text: {type: String, default: 'Blah'}
 });
 
-/*benefits.create(
+/*
+benefits.create(
   {id: 1, text: '401k match'},
   {id: 2, text: 'Paternity leave'},
-  {id: 3, text: "Maternity/Bonding leave"},
-  {id: 4, text: "LASIK"},
-  {id: 5, text: "Egg Freezing"},
-  {id: 6, text: "Onsite Daycare"},
-  {id: 7, text: "Sick leave"},
-  {id: 8, text: "Medical insurance"},
-  {id: 9, text: "Dental insurance"},
-  {id: 10, text: "Vision"},
-  {id: 11, text: "Mother’s room"},
-  {id: 12, text: "Telecommuting"},
-  {id: 13, text: "Shuttles"},
-  {id: 14, text: "Diversity data/ration"},
-  {id: 15, text: "Family benefits"}, function (err, small) {
+  {id: 3, text: "Maternity leave"},
+  {id: 4, text: "Egg Freezing"},
+  {id: 5, text: "On-site Daycare"},
+  {id: 6, text: "Sick leave"},
+  {id: 7, text: "Health insurance"},
+  {id: 8, text: "Mother’s room"},
+  {id: 9, text: "Telecommuting"},
+  {id: 10, text: "Shuttles"},
+  {id: 11, text: "Family benefits"},
+  {id: 12, text: "Part time"}, function (err, small) {
    if (err) return handleError(err);
    // saved!
   });*/
 
-module.exports = benefits;
+//console.log(company);
 
+module.exports = benefits;
 
 
 
