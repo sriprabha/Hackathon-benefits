@@ -58,9 +58,50 @@ function getCompanies(req, res) {
 			if (err)
 				res.send(err);
 
-			console.log(companies);
-			res.json(companies);
+			var keys = {};
+			var finalCompanies = {};
+			for (var company in companies) {
+				if(companies[company].name in keys) {
+					// something
+					console.log('skipping');
+				} else {
+					finalCompanies[company] = companies[company];
+					keys[companies[company].name] = companies[company].name;
+				}
+			};
+			res.json(finalCompanies);
 		});
+}
+
+function getCompanyCountPerBenefit(res) {
+	// Get all the ids in the array first
+
+	Company.find()
+		.exec(function(err, companies) {
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err);
+
+			var keys = {};
+			for (var company in companies) {
+				console.log('Benefits :' + companies[company].benefits);
+
+				for (var i = 0; i < companies[company].benefits.length; i++) {
+
+					var benefitId = companies[company].benefits[i];
+					if (benefitId in keys) {
+						var currentCount = keys[benefitId];
+						keys[benefitId]	= parseInt(currentCount+1,10);
+					} else {
+						keys[benefitId] = 1;
+					}
+				}
+			};
+		});
+}
+
+function logArrayElements(element, index, array) {
+	console.log('a[' + index + '] = ' + element);
 }
 
 function createCompany(req, res) {
@@ -109,6 +150,11 @@ module.exports = function(app) {
 		getFullBenefits(res);
 	});
 
+	app.get('/api/companycountperbenefit', function(req, res) {
+
+		getCompanyCountPerBenefit(res);
+	});
+
 	app.post('/api/save', function(req, res) {
 		getCompanies(req, res);
 	});
@@ -129,11 +175,10 @@ module.exports = function(app) {
 				res.send(err);
 
 			benefit[0].impression	= parseInt(benefit[0].impression+1,10);
-			Benefits.update({id: req.params.benefit_id},benefit[0], function(err,affected) {
-				console.log('affected rows %d', affected);
-			});
-
-			res.json(benefit); // return all todos in JSON format
+			benefit[0].save(function (err) {
+					if (err) return handleError(err);
+					res.send(benefit[0]);
+				});
 		});
 	});
 

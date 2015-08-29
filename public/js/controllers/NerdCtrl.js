@@ -13,6 +13,7 @@ angular.module('NerdCtrl', []).controller('NerdController', function($scope, $ht
     });
 
 
+
 $('#chart1').highcharts({
         chart: {
             type: 'bar'

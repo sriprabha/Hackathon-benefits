@@ -13,6 +13,9 @@ angular.module('BenefitsService', [])
       },
       recordImp : function(benefit_id) {
         return $http.post('/api/benefit/recordimp/' + benefit_id);
+      },
+      getCompanyCountPerBenefit : function() {
+        return $http.get('/api/companycountperbenefit');
       }
     }
   }]);
