@@ -12,14 +12,14 @@ var company = dbmongo.model('Company', {
   benefits: [Number]
 });
 
-/*
+
 
 company.create(
-  {id: 1, name: 'Google book', size: 20000, gender_ratio: 25, url: 'http://www.google.com', benefits: [1,2,4,5]},
+  {id: 1, name: 'Google book', size: 20000, gender_ratio: 25, url: 'https://www.linkedin.com/company/google', benefits: [1,2,4,5]},
   {id: 2, name: 'LinkedOut', size: 2000, gender_ratio: 2, url: 'http://www.linkedin.com', benefits: [1,8,5]},
-  {id: 3, name: 'Facepen', size: 2000, gender_ratio: 2, url: 'http://www.facebook.com', benefits: [1,8,5]}, function (err, small) {
+  {id: 3, name: 'Facepen', size: 2000, gender_ratio: 2, url: 'https://www.linkedin.com/company/facebook', benefits: [1,8,5]}, function (err, small) {
     if (err) return handleError(err);
     // saved!
   });
-*/
+
 module.exports = company;

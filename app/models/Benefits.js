@@ -12,7 +12,7 @@ var benefits = dbmongo.model('benefits', {
 });
 
 
-/*
+
 benefits.create(
   {id: 1, text: '401k match'},
   {id: 2, text: 'Paternity leave'},
@@ -29,7 +29,7 @@ benefits.create(
    if (err) return handleError(err);
    // saved!
   });
-*/
+
 module.exports = benefits;
 
 

@@ -42,9 +42,6 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 		}
 		$scope.selected = indices.length>0;
 		
-		
-		
-		
 		Benefits.saveIds(filters)
 			.success(function(data) {
 				console.log("SUCCESS"+data);

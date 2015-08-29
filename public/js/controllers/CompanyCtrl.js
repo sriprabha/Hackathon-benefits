@@ -6,6 +6,8 @@ angular.module('CompanyCtrl', []).controller('CompanyController', function($scop
             $scope.loading = false;
           });
 
+
+        $scope.submitted=false;
         $scope.loadTags = function(query) {
           return $http.get('/api/benefits');
         };
@@ -20,6 +22,7 @@ angular.module('CompanyCtrl', []).controller('CompanyController', function($scop
         	Companies.createCompany(companyObj)
         		.success(function(data){
         			console.log("Success");
+        			$scope.submitted=true;
         		});
         };
 
