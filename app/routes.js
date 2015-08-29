@@ -46,19 +46,13 @@ function getFullBenefits(res){
 
 function getCompanies(req, res) {
 	// Get all the ids in the array first
-	var ids = [];
-	req.body.benefits=[{id:1},{id:8}];
-	var benefits = req.body.benefits;
-	for (var benefit in benefits) {
-		ids[benefit] = benefits[benefit].id;
-	};
-
-	Company.find( { benefits: { $all: ids } } )
+	Company.find( { benefits: { $all: req.body } } )
 		.exec(function(err, companies) {
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err);
 
+			console.log(companies);
 			res.json(companies);
 		});
 }
