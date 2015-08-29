@@ -1,16 +1,13 @@
-angular.module('CompanyCtrl', []).controller('CompanyController', function($scope, $http) {
- 				$scope.tags = [
-                    { text: 'just' },
-                    { text: 'some' },
-                    { text: 'cool' },
-                    { text: 'tags' }
-                ];
-  console.log($http.get('/api/benefits'));
-                $scope.loadTags = function(query) {
-                  console.log('Done');
-                  console.log($http.get('/api/benefits'));
+angular.module('CompanyCtrl', []).controller('CompanyController', function($scope, $http, Benefits) {
+        Benefits.get()
+          .success(function(data) {
+            console.log(data);
+            $scope.tags = data;
+            $scope.loading = false;
+          });
 
-                     return $http.get('/api/benefits');
-                };
+        $scope.loadTags = function(query) {
+          return $http.get('/api/benefits');
+        };
 
 });

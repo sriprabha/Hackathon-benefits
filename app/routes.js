@@ -1,15 +1,23 @@
 var Benefits = require('./models/Company');
 
 function getBenefits(res){
-	console.log('done');
 	Benefits.find(function(err, benefits) {
-		console.log(benefits);
-
 		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 		if (err)
 			res.send(err);
 
-		res.json(benefits); // return all todos in JSON format
+		var texts =[];
+		var keys = {};
+		for (var benefit in benefits) {
+			if(benefits[benefit].id in keys) {
+				// something
+			} else {
+				texts[benefit] = ({text: benefits[benefit].text});
+				keys[benefits[benefit].id] = benefits[benefit].text;
+			}
+		};
+
+		res.json(texts); // return all todos in JSON format
 	});
 };
 

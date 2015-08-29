@@ -10,17 +10,21 @@ var benefits = dbmongo.model('benefits', {
 });
 
 
-benefits.find(function (err, benefits1) {
-  if (err) return console.error(err);
-  var texts =[];
-  for (var benefit in benefits1) {
-   texts[benefit] = ({text: benefits1[benefit].text});
- }
- return texts;
-});
-
 module.exports = benefits;
 
+
+
+
+/*
+
+ benefits.find(function (err, benefits1) {
+ if (err) return console.error(err);
+ var texts =[];
+ for (var benefit in benefits1) {
+ texts[benefit] = ({text: benefits1[benefit].text});
+ }
+ return texts;
+ });
 
 /*
 
