@@ -19,6 +19,8 @@
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
 	<script src="libs/ng-tags-input/build/ng-tags-input.js"></script>
+	<script src="libs/jquery/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	
 
 
@@ -26,6 +28,7 @@
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
 	<script src="js/controllers/NerdCtrl.js"></script>
+	<script src="js/controllers/TechnologyCtrl.js"></script>
 	<script src="js/controllers/CompanyCtrl.js"></script>
 	<script src="js/services/NerdService.js"></script>
 	<script src="js/controllers/GeekCtrl.js"></script>
@@ -36,16 +39,6 @@
 <body ng-app="sampleApp" ng-controller="NerdController">
 <div class="container">
 	
-	<!-- HEADER -->
-	<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Benefits name</a>
-		</div>
-		<ul class="nav navbar-nav pull-right">
-			<li><a href="/companyLogin">Company Login</a></li>
-			<li><a href="/applicantLogin">Applicant Login</a></li>
-		</ul>
-	</nav>
 	<!-- ANGULAR DYNAMIC CONTENT -->
 	<div ng-view>
 
