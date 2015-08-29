@@ -183,11 +183,13 @@ $('#chart6').highcharts({
             }
         },
 
-        series: [{
-            name: 'correlate',
-            data: [5, 3, 4, 7, 2]
-        }, 
-        ]
+       series: [{
+            name: 'Searched',
+            data: [162, 80, 60, 40, 15]
+        },{
+            name: 'Offered',
+            data: [148, 60, 10, 10, 8]
+        }, ]
     });
 
 });
