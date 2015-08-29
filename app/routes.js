@@ -1,4 +1,4 @@
-var Benefits = require('./models/Company');
+var Benefits = require('./models/Benefits');
 
 function getBenefits(res){
 	Benefits.find(function(err, benefits) {
