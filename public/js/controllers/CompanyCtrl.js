@@ -5,8 +5,12 @@ angular.module('CompanyCtrl', []).controller('CompanyController', function($scop
                     { text: 'cool' },
                     { text: 'tags' }
                 ];
+  console.log($http.get('/api/benefits'));
                 $scope.loadTags = function(query) {
-                     return $http.get('/tags?query=' + query);
+                  console.log('Done');
+                  console.log($http.get('/api/benefits'));
+
+                     return $http.get('/api/benefits');
                 };
-	
+
 });
