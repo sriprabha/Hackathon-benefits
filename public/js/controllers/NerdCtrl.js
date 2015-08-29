@@ -100,10 +100,10 @@ $('#chart4').highcharts({
             type: 'bar'
         },
         title: {
-            text: 'Benefits most offered by Companies'
+            text: 'Benefits offered by Companies'
         },
         xAxis: {
-            categories: ['Maternity Leave', 'Health Insurance','Onsite Day care', 'Telecommuting', 'Paternity Leave']
+            categories: ['Health Insurance','Maternity Leave','Onsite Day care', 'Telecommuting', 'Paternity Leave']
         },
         yAxis: {
             min: 0,
@@ -114,32 +114,51 @@ $('#chart4').highcharts({
         legend: {
             reversed: true
         },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
 
         series: [{
-            name: '20-29',
-            data: [5, 3, 4, 7, 2]
-        }, {
-            name: '31-40',
-            data: [2, 2, 3, 2, 1]
-        }, {
-            name: '41-50',
-            data: [3, 4, 4, 2, 5]
-        }, {
-            name: '51-60',
-            data: [3, 4, 4, 2, 5]
-        }, {
-            name: '61 and above',
-            data: [3, 4, 4, 2, 5]
-        },
+            name: '% companies',
+            data: [90, 73, 26, 17, 12]
+        }, 
         ]
     });
 
 $('#chart5').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Benefits offered by Companies - Breakdown by sector'
+        },
+        xAxis: {
+            categories: ['Health Insurance','Maternity Leave','Onsite Day care', 'Telecommuting', 'Paternity Leave']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of searches'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+
+        series: [{
+            name: 'Information Technology',
+            data: [88, 90, 60, 57, 25]
+        }, {
+            name: 'Healthcare',
+            data: [90, 90, 13, 2, 10]
+        }, {
+            name: 'Accounting and Finance',
+            data: [89, 78, 10, 5, 5]
+        }, {
+            name: 'Industrial and Manufacturing',
+            data: [83, 67, 11, 1, 5]
+        }, 
+        ]
+    });
+
+$('#chart6').highcharts({
         chart: {
             type: 'bar'
         },
