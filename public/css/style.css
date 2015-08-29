@@ -53,7 +53,12 @@ ul li {
 .tile-container{
 	margin:7px;
 }
-
+.panel-header {
+    font-weight:bold;
+}
+.active {
+    opacity:0.7;
+}
 .results-container {
 	margin-top:25px;
 	width:50%;

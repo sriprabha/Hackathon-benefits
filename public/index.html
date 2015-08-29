@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<base href="/">
 
-	<title>Starter Node and Angular</title>
+	<title>Company Benefits</title>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
@@ -21,10 +21,9 @@
 	<script src="libs/ng-tags-input/build/ng-tags-input.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
 	
-
-
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
@@ -41,6 +40,16 @@
 </head>
 <body ng-app="sampleApp" ng-controller="NerdController">
 <div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Benefits name</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+      <li><a href="/trends">Trends and Analytics</a></li>
+      <li><a href="/companyLogin">Company</a></li>
+      <li><a href="/applicantLogin">Applicant</a></li>
+    </ul>
+  </nav>
 	
 	<!-- ANGULAR DYNAMIC CONTENT -->
 	<div ng-view>
