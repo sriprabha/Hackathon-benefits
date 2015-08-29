@@ -1,6 +1,7 @@
-angular.module('CompanyCtrl', ['CompanyService']).controller('CompanyController', function($scope) {
+angular.module('CompanyCtrl', []).controller('CompanyController', function($scope) {
 
 
-	
+
+
 
 });
