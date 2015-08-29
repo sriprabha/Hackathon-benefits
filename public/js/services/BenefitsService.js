@@ -7,6 +7,9 @@ angular.module('BenefitsService', [])
       },
       getFullBenefits : function() {
         return $http.get('/api/fullbenefits');
+      },
+      saveIds: function(ids) {
+        return $http.post('/api/save/{{ids}}');
       }
     }
   }]);
