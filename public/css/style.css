@@ -1,10 +1,20 @@
-body { padding-top:30px; }
+
+body{ 
+	opacity: 0.85;
+	background-image: url('bg.jpg');
+	padding:20px;
+
+	 }
+
 
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
+.form-input {
+	margin-bottom:20px;
+}
 .dropdown .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -18,20 +28,52 @@ body { padding-top:30px; }
     list-style: none; /** Remove list bullets */
     width: 100%; /** Set the width to 100% of it's parent */
     padding: 0;
+    border-radius: 4px;
 }
 
 .dropdown:hover .dropdown-menu {
     display: block;
+    border-radius: 4px;
 }
 
+li {
+	list-style: none;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul li {
+    display:inline;
+}
+
+.tile-container{
+	margin:7px;
+}
+
+.results-container {
+	margin-top:25px;
+	width:50%;
+}
+
+.tile {
+	width: 100px;
+	height: 100px;
+}
 /** Button Styles **/
 .dropdown button {
-    background: #FF6223;
+    background: #222;
     color: #FFFFFF;
     border: none;
     margin: 0;
     padding: 0.4em 0.8em;
-    font-size: 1em;
+    font-size: 14px;
+    margin-top:120px;
+    width:250px;
+    height:55px;
 }
 
 /** List Item Styles **/

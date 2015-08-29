@@ -1,0 +1,19 @@
+<div class="text-center">
+	<div class="btn-group tile-container" role="group" ng-repeat = "text in benefits" aria-label="...">
+		<button type="button" class="tile btn btn-default">{{text}}</button>
+	</div>
+	<button type="button" class="btn btn-primary" ng-click="reset()">Reset</button>
+</div>
+
+<div class="container">
+	<div class="list-group results-container" ng-repeat="item in companies">
+	  <button type="button" class="list-group-item" ng-click="clicked = !clicked">{{item}}</button>
+	<div class="panel panel-default">
+	  <div class="panel-body" ng-show="clicked">
+	      Summary
+	      Job page
+	  </div>
+	 </div>
+	</div>
+</div>
+</div>
