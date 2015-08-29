@@ -23,6 +23,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'CompanyController'
 		})
 
+		.when('/technology', {
+			templateUrl: 'views/technology.html',
+			controller: 'TechnologyController'
+		})
+
 	$locationProvider.html5Mode(true);
 
 }]);
