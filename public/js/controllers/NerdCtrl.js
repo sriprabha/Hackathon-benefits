@@ -44,7 +44,7 @@ $('#chart1').highcharts({
         },
 
         series: [{
-            name: 'All searches',
+            name: 'Number of times the benefit is searched',
             data: $scope.benefitimpressions
         }]
     });
@@ -139,7 +139,7 @@ $('#chart4').highcharts({
         },
 
         series: [{
-            name: '% companies',
+            name: 'Number of companies offering the benefit',
             data: getRandomArray(12)
         }, 
         ]
