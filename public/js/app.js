@@ -1,1 +1,1 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService', 'CompanyCtrl', 'GeekCtrl', 'GeekService']);
+angular.module('sampleApp', ['ngRoute', 'ngTagsInput' ,'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService', 'CompanyCtrl', 'GeekCtrl', 'GeekService']);
