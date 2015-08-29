@@ -13,6 +13,16 @@ angular.module('NerdCtrl', []).controller('NerdController', function($scope, $ht
     });
 
 
+    function getRandomArray(max) {
+        var arr = [];
+        for (var i=0, t=100; i<max; i++) {
+            arr.push(Math.round(Math.random() * t))
+        }
+        return arr;
+    };
+    
+
+
 $('#chart1').highcharts({
         chart: {
             type: 'bar'
@@ -34,7 +44,7 @@ $('#chart1').highcharts({
         },
 
         series: [{
-            name: 'All searches',
+            name: 'Number of times the benefit is searched',
             data: $scope.benefitimpressions
         }]
     });
@@ -59,13 +69,13 @@ $('#chart2').highcharts({
         legend: {
             reversed: true
         },
-        
+
         series: [{
             name: 'Women',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         },{
             name: 'Men',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, ]
     });
 
@@ -91,19 +101,19 @@ $('#chart3').highcharts({
 
         series: [{
             name: '20-29',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: '31-40',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: '41-50',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: '51-60',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: '61 and above',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         },
         ]
     });
@@ -129,8 +139,8 @@ $('#chart4').highcharts({
         },
 
         series: [{
-            name: '% companies',
-            data: $scope.benefitimpressions
+            name: 'Number of companies offering the benefit',
+            data: getRandomArray(12)
         }, 
         ]
     });
@@ -157,16 +167,16 @@ $('#chart5').highcharts({
 
         series: [{
             name: 'Information Technology',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: 'Healthcare',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: 'Accounting and Finance',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, {
             name: 'Industrial and Manufacturing',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, 
         ]
     });
@@ -198,10 +208,10 @@ $('#chart6').highcharts({
 
        series: [{
             name: 'Searched',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         },{
             name: 'Offered',
-            data: $scope.benefitimpressions
+            data: getRandomArray(12)
         }, ]
     });
 
