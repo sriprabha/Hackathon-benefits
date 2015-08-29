@@ -9,5 +9,4 @@ angular.module('CompanyCtrl', []).controller('CompanyController', function($scop
                      return $http.get('/tags?query=' + query);
                 };
 	
-
 });
