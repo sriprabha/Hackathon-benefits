@@ -1,4 +1,6 @@
 <div class="jumbotron text-center">
 	<input type="text" placeholder="Enter LinkedIn Url"/>
-	<input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput">
+	 <tags-input ng-model="tags">
+        <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
 </div>
