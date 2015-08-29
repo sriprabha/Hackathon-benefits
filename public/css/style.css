@@ -4,8 +4,15 @@ body{
 	background-image: url('bg.jpg');
 	padding:20px;
 
-	 }
+}
 
+.navbar-margin {
+    margin-top:33px;
+}
+
+.login {
+    float:right;
+}
 .landing-text{
     text-align: center;
 }
