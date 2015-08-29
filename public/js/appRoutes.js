@@ -16,7 +16,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/geeks', {
 			templateUrl: 'views/geek.html',
 			controller: 'GeekController'	
-		});
+		})
+
+		.when('/companyLogin', {
+			templateUrl: 'views/company.html',
+			controller: 'CompanyController'
+		})
 
 	$locationProvider.html5Mode(true);
 

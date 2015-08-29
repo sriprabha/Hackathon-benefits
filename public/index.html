@@ -8,15 +8,21 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/bootstrap-tagsinput/bootstrap-tagsinput.css">
 	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
 	<!-- JS -->
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/jquery/dist/jquery.js"></script>
+	<script src="libs/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
 	<script src="js/controllers/NerdCtrl.js"></script>
+	<script src="js/controllers/CompanyCtrl.js"></script>
 	<script src="js/services/NerdService.js"></script>
 	<script src="js/controllers/GeekCtrl.js"></script>
 	<script src="js/services/GeekService.js"></script>
@@ -29,16 +35,17 @@
 	<!-- HEADER -->
 	<nav class="navbar navbar-inverse">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Stencil: Node and Angular</a>
+			<a class="navbar-brand" href="/">Benefits name</a>
 		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="/nerds">Nerds</a></li>
-			<li><a href="/geeks">Geeks</a></li>
+		<ul class="nav navbar-nav pull-right">
+			<li><a href="/companyLogin">Company Login</a></li>
+			<li><a href="/applicantLogin">Applicant Login</a></li>
 		</ul>
 	</nav>
-
 	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
+	<div ng-view>
+
+	</div>
 
 </div>
 </body>
