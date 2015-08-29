@@ -2,8 +2,9 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 	
 	var filters =[];
 	var indices = [];
-	$scope.companies = ["ABCD", "EFGH", "JKLM", "1231", "12128", "ABCSI"];
+	
 	$scope.clicked = false;
+	$scope.showMessage = true;
 
 	
 	
@@ -14,6 +15,11 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 		indices = [];
 		filters = [];
 		$scope.selected = false;
+		Benefits.saveIds(filters)
+			.success(function(data) {
+				$scope.companies = data;
+				$scope.showMessage = true;
+		});
 	}
 
 	$scope.isSelected = function(index) {
@@ -29,6 +35,7 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 			filters.splice(fil,1);
 		}
 		else {
+			$scope.showMessage = false;
 			filters.push(row);
 			indices.push(index);
 
@@ -41,6 +48,8 @@ angular.module('TechnologyCtrl', []).controller('TechnologyController', function
 		Benefits.saveIds(filters)
 			.success(function(data) {
 				console.log("SUCCESS"+data);
+				$scope.companies = data;
+
 
 			});
 	};

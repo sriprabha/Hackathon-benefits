@@ -5,7 +5,7 @@ angular.module('CompaniesService', [])
       get : function() {
         return $http.get('/api/companies');
       },
-      createCompany : function() {
+      createCompany : function(companyData) {
         return $http.post('/api/company', companyData);
       }
     }
